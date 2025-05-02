@@ -5,10 +5,11 @@ import {FormsModule} from '@angular/forms';
 import {NavbarComponent} from './features/navbar/navbar.component';
 import {FooterComponent} from './features/footer/footer.component';
 import {LoginComponent} from './features/login/login.component';
+import {HomeComponent} from './features/home/home.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgClass, FormsModule, NavbarComponent, FooterComponent, LoginComponent],
+  imports: [RouterOutlet, NgClass, FormsModule, NavbarComponent, FooterComponent, LoginComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
