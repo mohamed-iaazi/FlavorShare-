@@ -1,11 +1,31 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {Meal} from '../../models/meal';
+import {RecipeServiceService} from '../../core/services/recipe-service.service';
+import {FormsModule} from '@angular/forms';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [],
+  imports: [
+    FormsModule,
+    NgForOf
+  ],
   templateUrl: './recipe-list.component.html',
   styleUrl: './recipe-list.component.css'
 })
-export class RecipeListComponent {
+export class RecipeListComponent implements OnInit {
+  meals: Meal[] = [];
 
+  mealService=inject(RecipeServiceService)
+
+
+  ngOnInit(): void {
+    this.loadAllMeals();
+  }
+
+  loadAllMeals(): void {
+    this.mealService.getAllMeals().subscribe((data) => {
+      this.meals = data;
+    });
+  }
 }
