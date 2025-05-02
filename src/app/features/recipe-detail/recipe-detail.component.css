@@ -1,0 +1,37 @@
+.card {
+  background: #FFFFFF;
+  box-shadow: 1px 73px 99px rgba(9, 9, 9, 0.44);
+  border: 1px solid #FF98000D;
+  border-radius: 30px;
+  opacity: 1;
+  width: fit-content;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  background: #EF4C00;
+  border: 6px solid #EDF0F3;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.title h3 {
+  text-align: left;
+  font: normal normal normal 16px Source Sans Pro;
+  letter-spacing: 0;
+  color: #263238;
+  opacity: 1;
+}
