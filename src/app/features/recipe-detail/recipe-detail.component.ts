@@ -1,11 +1,12 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgForOf } from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {ActivatedRoute, Router, RouterLinkActive} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-detail',
-  imports: [NgForOf],
+  imports: [NgForOf, FormsModule, NgIf],
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
@@ -47,5 +48,28 @@ export class RecipeDetailComponent implements OnInit {
           }
         });
     }
+  }
+
+  comment = {
+    name: '',
+    message: ''
+  };
+
+  allComments: { [key: string]: { name: string; message: string }[] } = {};
+
+  submitComment(): void {
+    if (!this.comment.name || !this.comment.message) return;
+
+    if (!this.allComments[this.mealId]) {
+      this.allComments[this.mealId] = [];
+    }
+
+    this.allComments[this.mealId].push({ ...this.comment });
+
+    this.comment = { name: '', message: '' };
+  }
+
+  get currentComments() {
+    return this.allComments[this.mealId] || [];
   }
 }
