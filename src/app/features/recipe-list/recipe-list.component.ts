@@ -17,9 +17,9 @@ import {RouterLink} from '@angular/router';
 })
 export class RecipeListComponent implements OnInit {
   meals: Meal[] = [];
+  searchTerm: string = '';
 
-  mealService=inject(RecipeServiceService)
-
+  constructor(private mealService: RecipeServiceService) {}
 
   ngOnInit(): void {
     this.loadAllMeals();
@@ -29,5 +29,13 @@ export class RecipeListComponent implements OnInit {
     this.mealService.getAllMeals().subscribe((data) => {
       this.meals = data;
     });
+  }
+
+  filteredMeals(): Meal[] {
+    if (!this.searchTerm.trim()) return this.meals;
+    const term = this.searchTerm.toLowerCase();
+    return this.meals.filter(meal =>
+      meal.strMeal.toLowerCase().includes(term)
+    );
   }
 }
