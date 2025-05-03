@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NgClass} from '@angular/common';
+import {NgClass, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {NavbarComponent} from './features/navbar/navbar.component';
 import {FooterComponent} from './features/footer/footer.component';
@@ -10,17 +10,24 @@ import {RecipeDetailComponent} from './features/recipe-detail/recipe-detail.comp
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgClass, FormsModule, NavbarComponent, FooterComponent, LoginComponent, HomeComponent, RecipeDetailComponent],
+  imports: [RouterOutlet, FormsModule, NavbarComponent, FooterComponent, HomeComponent, RecipeDetailComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'FlavorShare';
   isMenuOpen: boolean=false;
   email: any;
   password: any;
 
   selectedMealId = '52772';
+  showSplash: boolean=true;
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showSplash = false;
+    }, 4000); // Splash duration: 3 seconds
+  }
 
 
   toggleMenu() {

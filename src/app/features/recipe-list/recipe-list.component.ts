@@ -3,12 +3,14 @@ import {Meal} from '../../models/meal';
 import {RecipeServiceService} from '../../core/services/recipe-service.service';
 import {FormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
   imports: [
     FormsModule,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './recipe-list.component.html',
   styleUrl: './recipe-list.component.css'

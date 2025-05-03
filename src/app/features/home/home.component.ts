@@ -5,7 +5,6 @@ import {RecipeListComponent} from '../recipe-list/recipe-list.component';
 @Component({
   selector: 'app-home',
   imports: [
-    RouterLink,
     RecipeListComponent
   ],
   templateUrl: './home.component.html',

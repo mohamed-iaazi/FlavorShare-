@@ -9,7 +9,7 @@ import { NgForOf } from '@angular/common';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() mealId!: string;
+  mealId!: string;
   mealImage = '';
   mealTitle = '';  // Now mealTitle will be fetched from API
   instructions: string[] = [];

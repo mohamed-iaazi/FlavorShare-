@@ -1,4 +1,12 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-home></app-home>
-<app-footer></app-footer>
+<!-- Splash Screen -->
+<div *ngIf="showSplash" class="splash-screen">
+  <div class="splash-logo">
+    <img src="/chef.png" alt="App Logo" />
+    <h1 class="animated-text">Fodie</h1>
+  </div>
+</div>
+
+<!-- Main Content -->
+<app-navbar  *ngIf="!showSplash"></app-navbar>
+<router-outlet  *ngIf="!showSplash"></router-outlet>
+<app-footer  *ngIf="!showSplash"></app-footer>
