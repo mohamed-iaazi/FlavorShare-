@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, inject, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForOf } from '@angular/common';
+import {ActivatedRoute, Router, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -14,10 +15,15 @@ export class RecipeDetailComponent implements OnInit {
   mealTitle = '';  // Now mealTitle will be fetched from API
   instructions: string[] = [];
   ingredients: string[] = [];
+  activatedRoute =inject(ActivatedRoute);
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+
+    this.mealId=this.activatedRoute.snapshot.params['id'];
+
+
     if (this.mealId) {
       this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${this.mealId}`)
         .subscribe(res => {

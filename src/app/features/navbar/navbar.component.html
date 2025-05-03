@@ -4,7 +4,7 @@
       <span class="self-center text-2xl font-bold whitespace-nowrap text-[#EF4C00]">Fodie</span>
     </a>
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="text-white bg-[#EF4C00] hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
+      <button routerLink="login/" type="button" class="text-white bg-[#EF4C00] hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center">
         Login
       </button>
       <!-- Mobile menu button -->
@@ -19,16 +19,16 @@
     <div [ngClass]="{'hidden': !isMenuOpen}" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
         <li>
-          <a href="#" class="block relative py-2 px-4 text-gray-900 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:focus:text-[#EF4C00] md:focus:border-b-[2px] md:focus:border-[#EF4C00] aria-current:text-[#EF4C00] aria-current:border-b-[2px] aria-current:border-[#EF4C00] aria-current:font-semibold mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out" aria-current="page">Home</a>
+          <a routerLink="/" class="block relative py-2 px-4 text-gray-900 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:focus:text-[#EF4C00] md:focus:border-b-[2px] md:focus:border-[#EF4C00] aria-current:text-[#EF4C00] aria-current:border-b-[2px] aria-current:border-[#EF4C00] aria-current:font-semibold mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="#" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">About</a>
+          <a routerLink="about" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">About</a>
         </li>
         <li>
-          <a href="#" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">Services</a>
+          <a routerLink="service" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">Services</a>
         </li>
         <li>
-          <a href="#" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">Contact</a>
+          <a routerLink="contact" class="block relative py-2 px-4 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#EF4C00] hover:border-b-[2px] hover:border-[#EF4C00] hover:font-semibold md:p-0 dark:text-black dark:hover:bg-gray-200 mt-2 hover:px-10 hover:py-4 transition-all duration-300 ease-in-out">Contact</a>
         </li>
       </ul>
     </div>
